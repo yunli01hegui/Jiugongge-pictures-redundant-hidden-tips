@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+}
+body{
+    counter-reset: counter 0;
+}
+.photos{
+    position: relative;
+}
+.photos>div:nth-of-type(1n+10){
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 132px;
+    height: 136px;
+    counter-increment: counter 1;
+}
+.photos>div:nth-of-type(1n+10):last-child::after{
+    content: counter(counter)  "+";
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 20px;
+    width: 132px;
+    height: 136px;
+    text-align: center;
+    line-height: 136px;
+    background-color: white;
+    z-index: 1;
+    border-radius: 5px;
+    opacity: 0.5;
+}
